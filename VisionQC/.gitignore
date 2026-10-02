@@ -1,0 +1,22 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+frontend/dist/
+data/**
+!data/.gitkeep
+models/**
+!models/.gitkeep
+*.sqlite3
+*.ckpt
+*.onnx
+
+# Generated inspection images and downloaded pretrained weights
+/results/
+/work/model-cache/
+*.safetensors
+*.pt
+*.pth

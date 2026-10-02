@@ -1,16 +1,33 @@
-# React + Vite
+# VisionQC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Vite + Tailwind CSS hero for an AI visual quality inspection product.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+cd Frontend
+npm install
+npm run dev
+```
 
-## React Compiler
+Open the local URL printed by Vite. The hero is at `/`; the CTA opens `/inspection`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm run build
+npm run lint
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Implementation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/components/Hero.tsx`: hero, status, CTA, inspection visual, and illustrative overlays.
+- `src/components/Navigation.tsx`: keyboard-accessible navigation with Escape and outside-click dismissal.
+- `src/App.tsx`: routes and an explicitly labeled inspection workspace placeholder.
+- `src/index.css`: reference-inspired composition, responsive styling, and reduced-motion support.
+- `public/inspection-station.png`: generated industrial photography asset, served locally.
+
+The hero uses illustrative readings; it does not request camera access or run inference. The inspection route is a placeholder for future model/camera integration.
+
+Responsive styles cover desktop/tablet positioning and a stacked mobile layout at 700px and below. Browser visual checks at 1440, 1024, 768, and 390 pixels remain to be completed because no browser was available in the development session.
+
+See `ASSET_NOTES.md` for image generation provenance and prompt.

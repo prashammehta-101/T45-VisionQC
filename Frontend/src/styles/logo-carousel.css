@@ -1,0 +1,158 @@
+.vqc-logo-carousel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 74px 0 48px;
+  color: #e6e1ec;
+  background: #111110;
+  border-bottom: 1px solid #c7b1e914;
+}
+.vqc-logo-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 24% 66%, #9361d513, transparent 56%),
+    radial-gradient(ellipse at 81% 58%, #d078bc0d, transparent 47%),
+    linear-gradient(180deg, #111110 0%, #141119 51%, #141119 100%);
+}
+.vqc-logo-carousel .vqc-logo-heading {
+  width: min(1280px, calc(100% - 112px));
+  margin: 0 auto 44px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.vqc-logo-carousel .vqc-logo-eyebrow {
+  display: block;
+  margin-bottom: 13px;
+  font: 9px/1.5 "Courier New", monospace;
+  letter-spacing: 1.8px;
+  color: #a69bb6;
+}
+.vqc-logo-carousel h2 {
+  margin: 0;
+  color: #e6e1ec;
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -.7px;
+}
+.vqc-logo-carousel .vqc-logo-mobile-break { display: none; }
+.vqc-logo-carousel .vqc-logo-pause {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 84px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #c7b1e921;
+  border-radius: 100px;
+  background: linear-gradient(130deg, #c4aae908, #e8accc03);
+  color: #b7a9c9;
+  font-size: 10px;
+  transition: border-color .2s, color .2s;
+}
+.vqc-logo-carousel .vqc-logo-pause:hover:not(:disabled) { border-color: #c7b1e953; color: #f0e9fa; }
+.vqc-logo-carousel .vqc-logo-pause:focus-visible { outline: 2px solid #c9acef; outline-offset: 5px; }
+.vqc-logo-carousel .vqc-logo-pause:disabled { cursor: default; }
+.vqc-logo-carousel .vqc-logo-window {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  padding: 12px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 13%, #000 87%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 13%, #000 87%, transparent);
+}
+.vqc-logo-carousel .vqc-logo-row { overflow: hidden; }
+.vqc-logo-carousel .vqc-logo-track {
+  display: flex;
+  width: max-content;
+  animation: vqc-logo-loop 48s linear infinite;
+  will-change: transform;
+}
+.vqc-logo-carousel .vqc-logo-group {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+  gap: clamp(48px, 6vw, 100px);
+  min-width: 100vw;
+  width: max-content;
+  margin: 0;
+  padding: 16px 48px;
+  list-style: none;
+}
+.vqc-logo-carousel .vqc-logo-item {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 48px;
+  color: #d4c9e1;
+  white-space: nowrap;
+  user-select: none;
+}
+.vqc-logo-carousel .vqc-logo-item:nth-child(3n + 2) { margin-inline: 18px; }
+.vqc-logo-carousel .vqc-logo-item svg { display: block; width: 32px; height: 32px; flex-shrink: 0; opacity: .82; }
+.vqc-logo-carousel .vqc-logo-item > span { font-family: Arial, "Helvetica Neue", sans-serif; font-size: 24px; font-weight: 500; line-height: 1; letter-spacing: -.8px; }
+.vqc-logo-carousel .vqc-logo-typescript > span { font-weight: 600; font-size: 23px; letter-spacing: -.9px; }
+.vqc-logo-carousel .vqc-logo-motion > span { font-weight: 700; font-style: italic; letter-spacing: -1px; }
+.vqc-logo-carousel .vqc-logo-vite > span { font-size: 27px; font-weight: 700; letter-spacing: -1px; }
+.vqc-logo-carousel .vqc-logo-lucide > span { font-weight: 400; letter-spacing: .3px; }
+.vqc-logo-carousel .vqc-logo-row-reverse .vqc-logo-track { animation-direction: reverse; animation-duration: 57s; }
+.vqc-logo-carousel .vqc-logo-row-reverse .vqc-logo-group { padding-inline: 85px; gap: clamp(58px, 7vw, 116px); }
+.vqc-logo-carousel .vqc-logo-row-reverse .vqc-logo-item { color: #b9adc9; }
+.vqc-logo-carousel .vqc-logo-caption {
+  width: min(1280px, calc(100% - 112px));
+  margin: 36px auto 0;
+  color: #a096af;
+  font: 9px/1.6 "Courier New", monospace;
+  letter-spacing: .6px;
+}
+.vqc-logo-carousel[data-paused="true"] .vqc-logo-track { animation-play-state: paused; }
+@media (hover: hover) {
+  .vqc-logo-carousel .vqc-logo-window:hover .vqc-logo-track { animation-play-state: paused; }
+}
+@keyframes vqc-logo-loop {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@media (max-width: 760px) {
+  .vqc-logo-carousel { padding: 49px 0 35px; }
+  .vqc-logo-carousel .vqc-logo-heading { width: calc(100% - 40px); margin-bottom: 28px; gap: 14px; align-items: center; }
+  .vqc-logo-carousel .vqc-logo-eyebrow { font-size: 8px; letter-spacing: 1.4px; margin-bottom: 11px; }
+  .vqc-logo-carousel h2 { font-size: 20px; letter-spacing: -.5px; }
+  .vqc-logo-carousel .vqc-logo-mobile-break { display: initial; }
+  .vqc-logo-carousel .vqc-logo-pause { min-width: 44px; padding: 10px; }
+  .vqc-logo-carousel .vqc-logo-pause > span { display: none; }
+  .vqc-logo-carousel .vqc-logo-window { gap: 13px; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .vqc-logo-carousel .vqc-logo-group { gap: 43px; padding: 10px 28px; }
+  .vqc-logo-carousel .vqc-logo-item:nth-child(3n + 2) { margin-inline: 9px; }
+  .vqc-logo-carousel .vqc-logo-row-reverse .vqc-logo-group { padding-inline: 55px; gap: 52px; }
+  .vqc-logo-carousel .vqc-logo-track { animation-duration: 40s; }
+  .vqc-logo-carousel .vqc-logo-row-reverse .vqc-logo-track { animation-duration: 47s; }
+  .vqc-logo-carousel .vqc-logo-item { gap: 10px; height: 44px; }
+  .vqc-logo-carousel .vqc-logo-item svg { width: 26px; height: 26px; }
+  .vqc-logo-carousel .vqc-logo-item > span { font-size: 21px; }
+  .vqc-logo-carousel .vqc-logo-caption { width: calc(100% - 40px); margin-top: 25px; font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vqc-logo-carousel .vqc-logo-window { mask-image: none; -webkit-mask-image: none; gap: 0; padding: 0 20px; }
+  .vqc-logo-carousel .vqc-logo-track { animation: none; transform: none; width: 100%; will-change: auto; }
+  .vqc-logo-carousel .vqc-logo-group { width: 100%; min-width: 0; padding: 8px 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-items: center; gap: 25px 15px; }
+  .vqc-logo-carousel .vqc-logo-group[aria-hidden="true"], .vqc-logo-carousel .vqc-logo-row-reverse { display: none; }
+  .vqc-logo-carousel .vqc-logo-item:nth-child(n) { margin: 0; }
+  .vqc-logo-carousel .vqc-logo-item > span { font-size: clamp(12px, 2vw, 21px); }
+  .vqc-logo-carousel .vqc-logo-item svg { width: 24px; height: 24px; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 560px) {
+  .vqc-logo-carousel .vqc-logo-group { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-items: start; gap: 15px; }
+  .vqc-logo-carousel .vqc-logo-item > span { font-size: 17px; }
+}

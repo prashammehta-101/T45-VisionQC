@@ -1,0 +1,18 @@
+/* Make the optional provider visible as a named Jev action in every capture flow. */
+.checkOption > span:last-of-type {
+  font-size: 0;
+}
+
+.checkOption > span:last-of-type::after {
+  content: 'Jev AI visual review';
+  font-size: 10px;
+}
+
+.checkOption > small {
+  font-size: 0;
+}
+
+.checkOption > small::after {
+  content: 'typesafe/jev-router';
+  font-size: 8px;
+}
